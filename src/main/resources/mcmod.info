@@ -1,12 +1,9 @@
 [{
-	"modid": "${mod_id}",
-	"name": "${mod_name}",
-	"version": "${mod_version}",
-	"mcversion": "1.12.2",
-	"description": "${mod_description}",
-	"authorList": ["${mod_authors}"],
-	"credits": "${mod_credits}",
-	"url": "${mod_url}",
-	"updateJSON": "${mod_update_json}",
-	"logoFile": "${mod_logo_path}"
+  "modid": "soulanchor",
+  "name": "Soul Anchor",
+  "description": "Respawn anchor-like block for Minecraft 1.12.2",
+  "version": "1.0.0",
+  "mcversion": "1.12.2",
+  "url": "https://github.com/BrendanPaaS/soul_anchor",
+  "authorList": ["BrendanP"]
 }]

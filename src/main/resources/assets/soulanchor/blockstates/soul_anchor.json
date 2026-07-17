@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "charged=false": { "model": "soulanchor:soul_anchor" },
+    "charged=true":  { "model": "soulanchor:soul_anchor_charged" }
+  }
+}
