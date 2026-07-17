@@ -40,4 +40,4 @@ Jar is output to `build/libs/`.
 
 ## License
 
-All rights reserved unless stated otherwise.
+MIT
