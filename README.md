@@ -1,21 +1,43 @@
-## TemplateDevEnv
-_For Kotlin see [TemplateDevEnvKt](https://github.com/CleanroomMC/TemplateDevEnvKt)_
+# Soul Anchor
 
-Template workspace for modding Minecraft 1.12.2. Licensed under MIT, it is made for public use.
+A respawn anchor for Minecraft 1.12.2 (Forge).
 
-This template runs on **Java 25**, **Gradle 9.6.1** + **[RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) 2.0.2** + **Forge 14.23.5.2847**.
+Adds a soul anchor block that lets you set your respawn point in the Nether.
+Craft it with a nether star surrounded by 8 obsidian, and it drops the obsidian back when broken.
+Right click with glowstone to charge it up to 4 times, and right click again to set your respawn — each death uses up one charge, and it glows brighter the more charges it holds.
+Use a charged one outside the Nether and it explodes, which is intentional game design.
 
-With **coremod and mixin support** that is easy to configure.
+## Usage
 
-### Instructions:
+1. Craft: nether star surrounded by 8 obsidian.
+2. Place it in the Nether.
+3. Right click with glowstone to add charges (up to 4).
+4. Right click with an empty hand to set your respawn point.
+5. Shift + right click with an empty hand to check charges.
+6. Each respawn at the anchor consumes one charge. At zero it goes dark and you respawn normally.
 
-1. Click `use this template` at the top.
-2. Clone the repository that you have created with this template to your local machine.
-3. Make sure IDEA is using Java 25 for Gradle before you sync the project. Verify this by going to IDEA's `Settings > Build, Execution, Deployment > Build Tools > Gradle > Gradle JVM`.
-4. Open the project folder in IDEA. When prompted, click "Load Gradle Project" as it detects the `build.gradle`, if you weren't prompted, right-click the project's `build.gradle` in IDEA, select `Link Gradle Project`, after completion, hit `Refresh All` in the gradle tab on the right.
-5. Run gradle tasks such as `runClient` and `runServer` in the IDEA gradle tab, or use the auto-imported run configurations like `1. Run Client`.
+## Config
 
-### Notes:
-- Dependencies script in [gradle/scripts/dependencies.gradle](gradle/scripts/dependencies.gradle), explanations are commented in the file.
-- Publishing script in [gradle/scripts/publishing.gradle](gradle/scripts/publishing.gradle).
-- When writing Mixins on IntelliJ, it is advisable to use latest [MinecraftDev Fork for RetroFuturaGradle](https://github.com/eigenraven/MinecraftDev/releases).
+| Option | Default | Description |
+|---|---|---|
+| `dimensionWhitelist` | `-1` (Nether) | Dimension IDs where the anchor can be used |
+| `activationItem` | `minecraft:glowstone` | Item consumed per charge; empty = free full charge on first click |
+| `maxCharges` | `4` | Maximum charges the anchor holds |
+| `intentionalGameDesign` | `true` | Explode when used outside whitelisted dimensions |
+| `bedsSetSpawn` | `true` | If false, beds no longer set your respawn point |
+
+Editable in-game via the mod config menu, or in `config/soulanchor.cfg`.
+
+## Building
+
+Requires JDK 25 for Gradle (the mod itself targets Java 8 / MC 1.12.2).
+
+```
+gradlew build
+```
+
+Jar is output to `build/libs/`.
+
+## License
+
+All rights reserved unless stated otherwise.
